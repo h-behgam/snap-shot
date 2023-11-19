@@ -1,15 +1,16 @@
-import React from "react";
+import React, { memo, useState } from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function Navlinks() {
-  // const [isactive, setIsactive] = useState(null);
-  // const handleSelect = (eventKey) => setIsactive(eventKey);
+  const [isactive, setIsactive] = useState(null);
+  const handleSelect = (eventKey) => {setIsactive(eventKey)};
   return (
     <Nav
       justify
       variant="tabs"
-      // onSelect={handleSelect}
+      onSelect={handleSelect}
+      activeKey={isactive}
     >
       <Nav.Item>
         <Nav.Link eventKey="1" to="/search/food" as={Link}>
@@ -36,4 +37,4 @@ function Navlinks() {
   );
 }
 
-export default Navlinks;
+export default memo(Navlinks);
