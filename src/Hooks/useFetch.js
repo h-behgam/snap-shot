@@ -1,27 +1,28 @@
 import { useEffect, useState } from "react";
+import { configs } from "../Config/Config";
 
 function UseFetch(tag) {
+  const url = `${configs.url}${configs.api_key}&per_page=${configs.per_page}&format=json&nojsoncallback=1&tags=${tag}`;
   const [images, setImages] = useState([]);
-  const config = {
-    url: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=",
-    api_key: "4a7010e99aa73e312b6111242b43af75",
-    Secret: "4ec681e2c00563c8",
-  };
+  const [isloading, setIsloading] = useState(false)
+
   const fetchData = async (url) => {
     try {
+      setIsloading(true)
       const res = await fetch(url);
       const json = await res.json();
       setImages(json.photos.photo);
+      setIsloading(false)
     } catch (error) {
       console.log(error.message);
     }
   };
 
   useEffect(() => {
-    fetchData(`${config.url}${config.api_key}&tags=${tag}&per_page=4&format=json&nojsoncallback=1`);
-  }, [tag]);
+    fetchData(url);
+  }, [url]);
 
-  return images;
+  return {images, isloading};
 }
 
 export default UseFetch;
