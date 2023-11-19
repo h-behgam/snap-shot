@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import './Lightbox.module.css'
+import styles from "./Lightbox.module.css";
 
 function Lightbox({ src, alt, caption }) {
   const [show, setShow] = useState(false);
@@ -10,14 +10,14 @@ function Lightbox({ src, alt, caption }) {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Image alt="test" src={src} onClick={handleShow} style={{width: "23%"}} className="px-0"/>
+      <Image alt={alt} src={src} onClick={handleShow} className={`px-0 ${styles.modalImage}`} />
 
       <Modal show={show} dialogClassName="modal-90w" size="lg" onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Name: {alt}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Image alt="test" src={src} onClick={handleShow} className="w-100" />
+          <Image alt={alt} src={src} onClick={handleShow} className="w-100" />
         </Modal.Body>
         <Modal.Footer className="justify-content-center">
           <p className="text-capitalize">{caption}</p>
@@ -27,4 +27,4 @@ function Lightbox({ src, alt, caption }) {
   );
 }
 
-export default Lightbox;
+export default memo(Lightbox);

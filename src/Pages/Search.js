@@ -1,20 +1,20 @@
-import React from "react";
+import React, { memo } from "react";
 import { useParams } from "react-router-dom";
 import UseFetch from "../Hooks/useFetch";
 import Lightbox from "../Components/Lightbox/Lightbox";
 import Navlinks from "../Components/Navbar/Navlinks";
+import { Spinner } from "react-bootstrap";
 
 function Search() {
-  console.log(useParams());
   const search = useParams();
-  const result = UseFetch(search.search);
-  console.log(result);
+  const {images: result, isloading} = UseFetch(search.search);
   return (
     <>
       <Navlinks />
       <h1 className="mt-2 mb-5">Search results</h1>
       <div className="row row-gap-3 d-flex flex-wrap justify-content-around">
-        {result.map((data) => {
+        {isloading && <h1 className="text-center">loading...<Spinner animation="grow" /></h1>}
+        {result && result.map((data) => {
           return (
             <Lightbox
               src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_c.jpg`}
@@ -29,4 +29,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default memo(Search);

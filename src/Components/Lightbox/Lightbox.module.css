@@ -1,3 +1,5 @@
-img{
-    object-fit: cover;
+img.modalImage {
+  object-fit: cover;
+  width: 300px;
+  height: 250px;
 }
