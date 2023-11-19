@@ -16,10 +16,11 @@ function SearchForm() {
     setSearch("");
   }
   return (
-    <Form className="w-50 mx-auto mb-5" onSubmit={handleSubmit}>
+    <Form className="col-xl-6 mx-auto mb-5" onSubmit={handleSubmit}>
       <Form.Group className="mb-3 w-100" controlId="Image">
         <Form.Label className="text-center d-block fs-3 fw-semibold p-3">Search a picture</Form.Label>
         <Form.Control
+          className="w-100"
           type="text"
           placeholder="Type Image name"
           onChange={(e) => setSearch(e.target.value)}
