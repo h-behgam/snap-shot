@@ -1,0 +1,39 @@
+import React from "react";
+import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+function Navlinks() {
+  // const [isactive, setIsactive] = useState(null);
+  // const handleSelect = (eventKey) => setIsactive(eventKey);
+  return (
+    <Nav
+      justify
+      variant="tabs"
+      // onSelect={handleSelect}
+    >
+      <Nav.Item>
+        <Nav.Link eventKey="1" to="/search/food" as={Link}>
+          Food
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="2" to="/search/tree" as={Link}>
+          Tree
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="3" to="/search/student" as={Link}>
+          Student
+        </Nav.Link>
+      </Nav.Item>
+
+      <Nav.Item>
+        <Nav.Link eventKey="4" to="/search/car" as={Link}>
+          Car
+        </Nav.Link>
+      </Nav.Item>
+    </Nav>
+  );
+}
+
+export default Navlinks;
