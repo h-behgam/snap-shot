@@ -1,10 +1,12 @@
 import React from "react";
-import Wrapper from "../Wrapper/Wrapper";
-// import Lightbox from "../Lightbox-old/Lightbox";
+import Routers from "../../Routers/Routers";
 
 function App() {
+  // const data = useFetch("ddd");
   return (
-    <Wrapper />
+    <>
+      <Routers />
+    </>
   );
 }
 
