@@ -13,6 +13,7 @@ function SearchForm() {
       setSearch("");
       navigate(`/search/${search}`);
     }
+    setSearch("");
   }
   return (
     <Form className="w-50 mx-auto mb-5" onSubmit={handleSubmit}>
