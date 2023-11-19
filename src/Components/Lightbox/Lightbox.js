@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
+import './Lightbox.module.css'
 
 function Lightbox({ src, alt, caption }) {
   const [show, setShow] = useState(false);
@@ -9,7 +10,7 @@ function Lightbox({ src, alt, caption }) {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Image alt="test" src={src} onClick={handleShow} style={{width: "23%"}} />
+      <Image alt="test" src={src} onClick={handleShow} style={{width: "23%"}} className="px-0"/>
 
       <Modal show={show} dialogClassName="modal-90w" size="lg" onHide={handleClose}>
         <Modal.Header closeButton>
