@@ -11,7 +11,6 @@ function Routers() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/search" element={<Search />} />
-          <Route path="/search/mountain" element={<Search />} />
           <Route path="/search/:search" element={<Search />} />
           <Route path="*" element={<NotFound />} />
         </Route>
