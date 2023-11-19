@@ -7,7 +7,8 @@ import { Spinner } from "react-bootstrap";
 
 function Search() {
   const search = useParams();
-  const {images: result, isloading} = UseFetch(search.search);
+  const checkParams = (search) => {return search !== undefined ? search : "flower" }
+  const {images: result, isloading} = UseFetch(checkParams(search.search));
   return (
     <>
       <Navlinks />
