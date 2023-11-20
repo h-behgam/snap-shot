@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../Pages/NotFound";
 import Search from "../Pages/Search";
-// import Wrapper from "../Components/Wrapper/Wrapper";
 import Layout from "../Pages/Layout";
 
 function Routers() {
