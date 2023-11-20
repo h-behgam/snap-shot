@@ -2,7 +2,7 @@ import React from 'react'
 
 function NotFound() {
   return (
-    <div>NotFound</div>
+    <h1 className='text-center text-capitalize'>This route is not valid. Please check a valid address</h1>
   )
 }
 

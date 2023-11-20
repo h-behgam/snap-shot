@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import UseFetch from "../Hooks/useFetch";
 import Lightbox from "../Components/Lightbox/Lightbox";
 import Navlinks from "../Components/Navbar/Navlinks";
-import { Spinner } from "react-bootstrap";
+import Loader from "../Components/Loader/Loader";
 
 function Search() {
   const search = useParams();
@@ -14,7 +14,7 @@ function Search() {
       <Navlinks />
       <h1 className="mt-2 mb-5">Search results</h1>
       <div className="row row-gap-3 d-flex flex-wrap justify-content-around">
-        {isloading && <h1 className="text-center">loading...<Spinner animation="grow" /></h1>}
+        {isloading && <Loader />}
         {result && result.map((data) => {
           return (
             <Lightbox
