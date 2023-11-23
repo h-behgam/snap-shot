@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { configs } from "../Config/Config";
 
-function UseFetch(tag) {
-  const url = `${configs.url}${configs.api_key}&per_page=${configs.per_page}&format=json&nojsoncallback=1&tags=${tag}`;
+function UseFetch(url) {
+  
   const [images, setImages] = useState([]);
   const [isloading, setIsloading] = useState(false)
 
