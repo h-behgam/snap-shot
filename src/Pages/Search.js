@@ -1,7 +1,6 @@
 import React, { memo, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Lightbox from "../Components/Lightbox/Lightbox";
-import Navlinks from "../Components/Navbar/Navlinks";
 import Loader from "../Components/Loader/Loader";
 import { useSearchState } from "../Context/SearchContext";
 
@@ -16,7 +15,6 @@ function Search() {
   
   return (
     <>
-      <Navlinks />
       <h1 className="mt-2 mb-5">Search results</h1>
       <div className="row row-gap-3 d-flex flex-wrap justify-content-around">
         {loading && <Loader />}
