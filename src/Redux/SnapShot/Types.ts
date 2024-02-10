@@ -23,6 +23,6 @@ export interface photos {
 export interface stateType {
   isLoading: boolean;
   data: photos | null | undefined;
-  error: string | unknown;
+  error: string | unknown | any;
 }
 export type title = string | undefined
