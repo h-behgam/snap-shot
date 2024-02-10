@@ -1,5 +1,3 @@
-import { SET_IMAGE, SET_PENDING, SET_ERROR } from "./SnapshotActionsType";
-
 export interface pic {
   farm: number;
   id: string;
@@ -22,21 +20,9 @@ export interface photos {
   photos: photo;
   stat: string;
 }
-export interface state {
-  images: photos | null;
-  loading: boolean;
-  error: string | null;
+export interface stateType {
+  isLoading: boolean;
+  data: photos | null | undefined;
+  error: string | unknown;
 }
-
-export interface setPendingType {
-  type: SET_PENDING;
-}
-export interface setImageType {
-  type: SET_IMAGE;
-  payload: photos;
-}
-export interface setErrorType {
-  type: SET_ERROR;
-  payload: string;
-}
-export type actionTYPE = setImageType | setPendingType | setErrorType;
+export type title = string | undefined
